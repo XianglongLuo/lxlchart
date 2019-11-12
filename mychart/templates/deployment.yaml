@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kube-node
+  labels:
+    app: nginx
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+      - name: hellodocker
+        image: rancherlxl/hellodocker:v1
+        ports:
+        - containerPort: 8080
+      imagePullSecrets:
+       - name: myregistrykey
