@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: mygocontainerforcrud
-        image: rancherlxl/mygoforcrud:v2
+        image: rancherlxl/mygoforcrud:v3
         ports:
         containerPort: 9090
       imagePullSecrets:
