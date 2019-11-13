@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: kube-node
+  name: kube-nodeforgo
   labels:
-    app: nginx
+    app: goweb
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: web
+      app: goweb
   template:
     metadata:
       labels:
-        app: web
+        app: goweb
     spec:
       containers:
-      - name: hellodocker
-        image: rancherlxl/hellodocker:v1
+      - name: mygocontainerforcrud
+        image: rancherlxl/mygoforcrud:v2
         ports:
-        - containerPort: 8080
+        containerPort: 9090
       imagePullSecrets:
        - name: myregistrykey

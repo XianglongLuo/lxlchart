@@ -4,27 +4,25 @@ kind: Service
 
 metadata:
 
-  name: kube-node-service
+  name: kube-node-serviceforgo
 
   labels:
 
-    name: kube-node-service
+    name: kube-node-serviceforgo
 
 spec:
 
-  type: NodePort      #这里代表是NodePort类型的
+  type: NodePort      
 
   ports:
 
-  - port: 80          #这里的端口和clusterIP(10.97.114.36)对应，即10.97.114.36:80,供内部访问。
-
-    targetPort: 8080  #端口一定要和container暴露出来的端口对应，nodejs暴露出来的端口是8081，所以这里也应是8081
-
+  - port: 80          
+    targetPort: 9090  
     protocol: TCP
 
-    nodePort: 32143   # 所有的节点都会开放此端口，此端口供外部调用。
+    nodePort: 32090   
 
   selector:
 
-    app: web          #这里选择器一定要选择容器的标签，之前写name:kube-node是错的。
+    app: goweb         
 
