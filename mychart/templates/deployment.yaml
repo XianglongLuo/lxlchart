@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: kube-nodeforgo
+  name: kube-nodeforgo1
   labels:
     app: goweb
 spec:
