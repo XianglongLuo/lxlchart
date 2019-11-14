@@ -20,7 +20,7 @@ spec:
     targetPort: 9090  
     protocol: TCP
 
-    nodePort: 32143   
+    nodePort: 32122   
 
   selector:
 
